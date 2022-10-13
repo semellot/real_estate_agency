@@ -12,8 +12,6 @@ class FlatAdmin(admin.ModelAdmin):
         'new_building',
         'construction_year',
         'town',
-        'owner_pure_phone',
-        'owners_phonenumber'
     ]
     list_editable = ['new_building']
     
