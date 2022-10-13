@@ -101,5 +101,5 @@ class Owner(models.Model):
         related_name='flats'
     )
     def __str__(self):
-        return self.owner
+        return self.owner_name
     
