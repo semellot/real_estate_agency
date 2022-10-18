@@ -4,8 +4,7 @@ from django.db import migrations
 
 def set_value_new_building(apps, schema_editor):
     Flat = apps.get_model('property', 'Flat')
-    flats = Flat.objects.all()
-    for flat in flats:
+    for flat in Flat.objects.all().iterator():
         flat.new_building = flat.construction_year >= 2015
         flat.save()
         

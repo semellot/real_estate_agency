@@ -5,7 +5,7 @@ from django.db import migrations
 def copy_owner_flat(apps, schema_editor):
     Flat = apps.get_model('property', 'Flat')
     Owner = apps.get_model('property', 'Owner')
-    for owner in Owner.objects.all():
+    for owner in Owner.objects.all().iterator():
         flats = Flat.objects.filter(
             owner=owner.owner_name,
             owners_phonenumber=owner.owners_phonenumber
