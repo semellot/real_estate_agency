@@ -3,7 +3,7 @@ from django.contrib import admin
 from .models import Flat, Complaint, Owner
 
 class OwnerInline(admin.TabularInline):
-    model = Owner.owned_flats.through
+    model = Owner.flats.through
     raw_id_fields = ['owner']
 
 class FlatAdmin(admin.ModelAdmin):
@@ -30,11 +30,11 @@ class ComplaintAdmin(admin.ModelAdmin):
     
 class OwnerAdmin(admin.ModelAdmin):
     list_display = [
-        'owner_name',
-        'owners_phonenumber',
-        'owner_pure_phone',
+        'name',
+        'phonenumber',
+        'pure_phone',
     ]
-    raw_id_fields = ['owned_flats']
+    raw_id_fields = ['flats']
 
 
 admin.site.register(Flat, FlatAdmin)
