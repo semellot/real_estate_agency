@@ -22,7 +22,7 @@ class FlatAdmin(admin.ModelAdmin):
     
     list_filter = ['new_building', 'rooms_number', 'has_balcony']
     
-    raw_id_fields = ['liked_user']
+    raw_id_fields = ['liked_users']
     
     inlines = [OwnerInline]
 
