@@ -71,7 +71,7 @@ class Complaint(models.Model):
         on_delete=models.SET_NULL,
         verbose_name='Кто жаловался',
         null=True,
-        related_name='complainants'
+        related_name='complaints'
     )
     flat = models.ForeignKey(
         Flat,
